@@ -1,6 +1,5 @@
 package go_koans
 
-import "fmt"
 
 func aboutBasics() {
 	assert(true == true)  // what is truth?
@@ -14,7 +13,6 @@ func aboutBasics() {
 
 	assert(5%2 == 1)
 	assert(5*2 == 10)
-	fmt.Println("anjing ini apa", 5^2)
 	assert(5^2 == 7)
 
 	var x int
