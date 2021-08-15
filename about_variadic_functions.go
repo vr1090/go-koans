@@ -1,20 +1,32 @@
 package go_koans
 
-import "strings"
+import (
+	"strings"
+)
 
 func concatNames(sep string, names ...string) string {
 	return strings.Join(names, sep) // variadic parameters are really just slices
 }
 
+func sumJing(num ...int) int {
+	sum := 0
+
+	for _, k := range num {
+		sum += k
+	}
+
+	return sum
+}
+
 func aboutVariadicFunctions() {
 	{
 		str := concatNames(" ", "bob", "billy", "fred")
-		assert(str == __string__) // several values can be passed to variadic parameters
+		assert(str == "bob billy fred") // several values can be passed to variadic parameters
 	}
 
 	{
 		names := []string{"bob", "billy", "fred"}
 		str := concatNames("-", names...)
-		assert(str == __string__) // or a slice can be dotted in place of all of them
+		assert(str == "bob-billy-fred" ) // or a slice can be dotted in place of all of them
 	}
 }
